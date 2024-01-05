@@ -5,6 +5,9 @@ Pascal's Triangle
 
 
 def pascal_triangle(n):
+		"""
+		function to return alist of lists
+		"""
     if n <= 0:
         return []
     arr = []
