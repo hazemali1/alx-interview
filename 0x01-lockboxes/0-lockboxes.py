@@ -12,7 +12,8 @@ def canUnlockAll(boxes):
         if box not in lis and box != 0:
             continue
         for i in range(len(boxess[box])):
-            if boxess[box][i] not in lis and boxess[box][i] != 0 and boxess[box][i] != box:
+            if (boxess[box][i] not in lis and boxess[box][i] != 0 and
+                boxess[box][i] != box):
                 if boxess[box][i] < box and boxess[box][i] not in lis:
                     for j in boxess[boxess[box][i]]:
                         if j not in lis and j != 0:
