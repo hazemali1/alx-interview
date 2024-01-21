@@ -10,7 +10,6 @@ def minOperations(n):
     l = 0
     while f <= n:
         if n % f == 0:
-            print(f)
             l += f
             n = n / f
         else:
