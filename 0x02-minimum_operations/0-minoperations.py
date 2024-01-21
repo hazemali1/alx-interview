@@ -2,6 +2,8 @@
 """min operations"""
 def minOperations(n):
     """min operations"""
+    if n <= 0:
+        return 0
     f = 0
     l = 0
     for i in range(2, n):
