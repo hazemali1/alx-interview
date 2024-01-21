@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """min operations"""
+
+
 def minOperations(n):
     """min operations"""
     if n <= 1:
@@ -12,5 +14,6 @@ def minOperations(n):
             l += f
             n = n / f
             f -= 1
-        f += 1
+        else:
+            f += 1
     return l
