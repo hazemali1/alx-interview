@@ -11,6 +11,6 @@ def minOperations(n):
             print(f)
             l += f
             n = n / f
-        else:
-            f += 1
+            f -= 1
+        f += 1
     return l
