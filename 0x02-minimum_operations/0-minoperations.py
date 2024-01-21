@@ -2,7 +2,7 @@
 """min operations"""
 def minOperations(n):
     """min operations"""
-    if n <= 0:
+    if n <= 1:
         return 0
     f = 0
     l = 0
