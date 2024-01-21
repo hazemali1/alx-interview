@@ -13,7 +13,6 @@ def minOperations(n):
             print(f)
             l += f
             n = n / f
-            f -= 1
         else:
             f += 1
     return l
