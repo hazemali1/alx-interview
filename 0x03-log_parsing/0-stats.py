@@ -1,43 +1,32 @@
 #!/usr/bin/python3
-
+"""read stdin"""
 import sys
 
 
-def print_msg(dict_sc, total_file_size):
-    print("File size: {}".format(total_file_size))
-    for key, val in sorted(dict_sc.items()):
-        if val != 0:
-            print("{}: {}".format(key, val))
+if __name__ == '__main__':
+    """main"""
+    count = 0
+    summ = 0
+    li = {}
 
+    try:
+        for line in sys.stdin:
+            s = line.split()
+            if len(s) > 2:
+                count += 1
+                summ += int(s[-1])
+                status = s[-2]
+                if status in li.keys():
+                    li[status] += 1
+                elif status in ["200", "301", "400", "401", "403", "404", "405", "500"]:
+                    li[status] = 1
+                if count == 10:
+                    count = 0
+                    print("File size: {}".format(summ))
+                    for k, v in sorted(li.items()):
+                        print("{}: {}".format(k, v))
 
-total_file_size = 0
-code = 0
-counter = 0
-dict_sc = {"200": 0,
-           "301": 0,
-           "400": 0,
-           "401": 0,
-           "403": 0,
-           "404": 0,
-           "405": 0,
-           "500": 0}
-
-try:
-    for line in sys.stdin:
-        parsed_line = line.split()  # ✄ trimming
-
-        if len(parsed_line) > 2:
-                counter += 1
-
-                total_file_size += int(parsed_line[-1])  # file size
-                code = parsed_line[-2]  # status code
-
-                if (code in dict_sc.keys()):
-                    dict_sc[code] += 1
-
-                if (counter == 10):
-                    print_msg(dict_sc, total_file_size)
-                    counter = 0
-
-finally:
-    print_msg(dict_sc, total_file_size)
+    finally:
+        print("File size: {}".format(summ))
+        for k, v in sorted(li.items()):
+            print("{}: {}".format(k, v))
