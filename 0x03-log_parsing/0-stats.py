@@ -27,9 +27,8 @@ try:
         parsed_line = line.split()  # ✄ trimming
 
         if len(parsed_line) > 2:
-            counter += 1
+                counter += 1
 
-            if counter <= 10:
                 total_file_size += int(parsed_line[-1])  # file size
                 code = parsed_line[-2]  # status code
 
