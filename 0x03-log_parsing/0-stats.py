@@ -13,7 +13,7 @@ try:
         s = line.split()
         print(s)
         count += 1
-        summ += s[-1]
+        summ += int(s[-1])
         status = s[-2]
         if status in l.keys():
             l[status] += 1
