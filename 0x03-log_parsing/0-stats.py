@@ -20,11 +20,11 @@ if __name__ == '__main__':
                     li[status] += 1
                 elif int(status) in [200, 301, 400, 401, 403, 404, 405, 500]:
                     li[status] = 1
-            if count == 10:
-                count = 0
-                print("File size: {}".format(summ))
-                for k, v in sorted(li.items()):
-                    print("{}: {}".format(k, v))
+                if count == 10:
+                    count = 0
+                    print("File size: {}".format(summ))
+                    for k, v in sorted(li.items()):
+                        print("{}: {}".format(k, v))
 
     finally:
         print("File size: {}".format(summ))
