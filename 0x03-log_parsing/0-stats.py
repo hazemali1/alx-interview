@@ -12,7 +12,7 @@ if __name__ == '__main__':
     try:
         for line in sys.stdin:
             s = line.split()
-            if len(s) == 8:
+            if len(s) == 9:
                 count += 1
                 summ += int(s[-1])
                 status = s[-2]
