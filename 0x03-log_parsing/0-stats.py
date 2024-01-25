@@ -25,7 +25,7 @@ if __name__ == '__main__':
                 for k, v in sorted(li.items()):
                     print("{}: {}".format(k, v))
 
-    finally:
+    except KeyboardInterrupt:
         print("File size: {}".format(summ))
         for k, v in sorted(li.items()):
             print("{}: {}".format(k, v))
