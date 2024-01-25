@@ -21,8 +21,13 @@ try:
         if count == 10:
             count = 0
             print("File size: {}".format(summ))
-            for k, v in l.items():
+            ll = {key: l[key] for key in sorted(l)}
+            for k, v in ll.items():
                 print("{}: {}".format(k, v))
 
 except KeyboardInterrupt:
     print("File size: {}".format(summ))
+    ll = {key: l[key] for key in sorted(l)}
+    for k, v in ll.items():
+        print("{}: {}".format(k, v))
+
