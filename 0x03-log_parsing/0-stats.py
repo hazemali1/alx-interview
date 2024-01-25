@@ -22,12 +22,10 @@ if __name__ == '__main__':
             if count == 10:
                 count = 0
                 print("File size: {}".format(summ))
-                ll = {key: li[key] for key in sorted(li)}
-                for k, v in ll.items():
+                for k, v in sorted(li.items()):
                     print("{}: {}".format(k, v))
 
     except KeyboardInterrupt:
         print("File size: {}".format(summ))
-        ll = {key: li[key] for key in sorted(li)}
-        for k, v in ll.items():
+        for k, v in sorted(li.items()):
             print("{}: {}".format(k, v))
