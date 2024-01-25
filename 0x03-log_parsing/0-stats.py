@@ -4,8 +4,8 @@ import sys
 
 
 count = 0
-summ = 0 
-l = {}
+summ = 0
+li = {}
 
 
 try:
@@ -14,20 +14,19 @@ try:
         count += 1
         summ += int(s[-1])
         status = s[-2]
-        if status in l.keys():
-            l[status] += 1
+        if status in li.keys():
+            li[status] += 1
         elif int(status) in [200, 301, 400, 401, 403, 404, 405, 500]:
-            l[status] = 1
+            li[status] = 1
         if count == 10:
             count = 0
             print("File size: {}".format(summ))
-            ll = {key: l[key] for key in sorted(l)}
+            ll = {key: li[key] for key in sorted(li)}
             for k, v in ll.items():
                 print("{}: {}".format(k, v))
 
 except KeyboardInterrupt:
     print("File size: {}".format(summ))
-    ll = {key: l[key] for key in sorted(l)}
+    ll = {key: li[key] for key in sorted(li)}
     for k, v in ll.items():
         print("{}: {}".format(k, v))
-
