@@ -16,7 +16,7 @@ try:
         status = s[-2]
         if status in l.keys():
             l[status] += 1
-        else:
+        elif status in [200, 301, 400, 401, 403, 404, 405, 500]:
             l[status] = 1
         if count == 10:
             count = 0
