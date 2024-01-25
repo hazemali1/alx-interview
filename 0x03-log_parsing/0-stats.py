@@ -4,9 +4,8 @@ import sys
 
 
 try:
-    while True:
-        for line in sys.stdin:
-            print(line)
+    for line in sys.stdin:
+        print(line)
 
 except EOFError:
     print("End of input.")
