@@ -5,7 +5,8 @@ import sys
 
 try:
     for line in sys.stdin:
-        print(len(line), "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+        s = line.split()
+        print(s)
 
 except EOFError:
     print("End of input.")
