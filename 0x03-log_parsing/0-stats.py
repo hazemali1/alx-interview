@@ -5,7 +5,7 @@ import sys
 
 try:
     for line in sys.stdin:
-        print(line)
+        print(line, "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
 
 except EOFError:
     print("End of input.")
