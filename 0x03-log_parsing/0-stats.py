@@ -9,7 +9,6 @@ if __name__ == '__main__':
     summ = 0
     li = {}
 
-
     try:
         for line in sys.stdin:
             s = line.split()
