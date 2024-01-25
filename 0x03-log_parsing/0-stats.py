@@ -24,9 +24,8 @@ dict_sc = {"200": 0,
 
 try:
     for line in sys.stdin:
-        parsed_line = line.split()  # ✄ trimming
+            parsed_line = line.split()  # ✄ trimming
 
-        if len(parsed_line) > 2:
             counter += 1
 
             if counter <= 10:
