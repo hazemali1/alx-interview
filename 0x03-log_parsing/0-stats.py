@@ -11,7 +11,6 @@ l = {}
 try:
     for line in sys.stdin:
         s = line.split()
-        print(s)
         count += 1
         summ += int(s[-1])
         status = s[-2]
