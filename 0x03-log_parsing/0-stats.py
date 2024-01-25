@@ -8,6 +8,7 @@ if __name__ == '__main__':
     count = 0
     summ = 0
     li = {}
+    codes = ["200", "301", "400", "401", "403", "404", "405", "500"]
 
     try:
         for line in sys.stdin:
@@ -18,7 +19,7 @@ if __name__ == '__main__':
                 status = s[-2]
                 if status in li.keys():
                     li[status] += 1
-                elif status in ["200", "301", "400", "401", "403", "404", "405", "500"]:
+                elif status in codes:
                     li[status] = 1
                 if count == 10:
                     count = 0
