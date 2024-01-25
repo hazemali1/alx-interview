@@ -13,7 +13,7 @@ try:
         s = line.split()
         count += 1
         summ += int(s[-1])
-        status = s[-2]
+        status = int(s[-2])
         if status in li.keys():
             li[status] += 1
         elif int(status) in [200, 301, 400, 401, 403, 404, 405, 500]:
