@@ -12,13 +12,14 @@ if __name__ == '__main__':
     try:
         for line in sys.stdin:
             s = line.split()
-            count += 1
-            summ += int(s[-1])
-            status = s[-2]
-            if status in li.keys():
-                li[status] += 1
-            elif int(status) in [200, 301, 400, 401, 403, 404, 405, 500]:
-                li[status] = 1
+            if len(s) >= 2:
+                count += 1
+                summ += int(s[-1])
+                status = s[-2]
+                if status in li.keys():
+                    li[status] += 1
+                elif int(status) in [200, 301, 400, 401, 403, 404, 405, 500]:
+                    li[status] = 1
             if count == 10:
                 count = 0
                 print("File size: {}".format(summ))
