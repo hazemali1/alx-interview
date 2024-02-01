@@ -3,6 +3,7 @@
 
 
 def validUTF8(data):
+    """Determines if a given data set represents a valid UTF-8 encoding"""
     i = 0
 
     while i < len(data):
@@ -17,8 +18,6 @@ def validUTF8(data):
         # Validate the number of leading set bits
         if set_bits == 0:
             i += 1
-        elif set_bits == 1 or set_bits > 4:
-            return False
         else:
             # Validate the continuation bytes
             for j in range(i + 1, i + set_bits):
