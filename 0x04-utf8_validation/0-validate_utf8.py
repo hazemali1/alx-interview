@@ -19,6 +19,6 @@ def validUTF8(data):
 
 
         j = s
-        if j > len(data) or i > 255:
+        if i > 255:
             return False
     return True
