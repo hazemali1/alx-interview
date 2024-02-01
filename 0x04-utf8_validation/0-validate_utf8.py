@@ -4,7 +4,6 @@
 
 def validUTF8(data):
     """valid UTF8"""
-    return True
     j = 0
     s = 0
     while j < len(data):
