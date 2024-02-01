@@ -22,6 +22,6 @@ def validUTF8(data):
             return False
         for d in range(j+1, s):
             if format(data[d], '08b')[0:2] != '10':
-                return False
+                return True
         j = s
     return True
