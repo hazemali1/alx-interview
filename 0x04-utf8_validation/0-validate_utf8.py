@@ -15,6 +15,8 @@ def validUTF8(data):
             j += 3
         elif format(i, '08b')[0:5] == '11110':
             j += 4
+        else:
+            return False
         if j > len(data) or i > 255:
             return False
     return True
