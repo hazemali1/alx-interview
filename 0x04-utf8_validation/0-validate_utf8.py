@@ -10,7 +10,7 @@ def validUTF8(data):
         i = data[j]
         if format(i, '08b')[0] == '0':
             s += 1
-        elif format(i, '08b')[0:3]== '110':
+        elif format(i, '08b')[0:3] == '110':
             s += 2
         elif format(i, '08b')[0:4] == '1110':
             s += 3
