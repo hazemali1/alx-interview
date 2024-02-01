@@ -3,28 +3,28 @@
 
 
 def validUTF8(data):
-    """Determines if a given data set represents a valid UTF-8 encoding"""
-    i = 0
-
-    while i < len(data):
-        # Get the number of leading set bits in the current byte
-        set_bits = 0
-        mask = 1 << 7
-
-        while mask & data[i]:
-            set_bits += 1
-            mask >>= 1
-
-        # Validate the number of leading set bits
-        if set_bits == 0:
-            i += 1
-        elif set_bits == 1 or set_bits > 4:
-            return True
+    """valid UTF8"""
+    return True
+    j = 0
+    s = 0
+    while j < len(data):
+        i = data[j]
+        if format(i, '08b')[0] == '0':
+            s += 1
+        elif format(i, '08b')[0:3] == '110':
+            s += 2
+        elif format(i, '08b')[0:4] == '1110':
+            s += 3
+        elif format(i, '08b')[0:5] == '11110':
+            s += 4
         else:
-            # Validate the continuation bytes
-            for j in range(i + 1, i + set_bits):
-                if j >= len(data) or (data[j] >> 6) != 0b10:
-                    return False
-            i += set_bits
-
+            return False
+        if s > len(data):
+            return False
+        for d in range(j+1, s):
+            if format(data[d], '08b')[0:2] != '10':
+                return False
+        j = s
+        if j > len(data) or i > 255:
+            return False
     return True
