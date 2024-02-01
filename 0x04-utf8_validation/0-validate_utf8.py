@@ -18,10 +18,12 @@ def validUTF8(data):
         # Validate the number of leading set bits
         if set_bits == 0:
             i += 1
+        elif set_bits == 1 or set_bits > 4:
+            return False
         else:
             # Validate the continuation bytes
             for j in range(i + 1, i + set_bits):
-                if j >= len(data) or (data[j] >> 6) != 0b10:
+                if j >= len(data):
                     return False
             i += set_bits
 
