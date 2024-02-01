@@ -20,11 +20,11 @@ def validUTF8(data):
             i += 1
         elif set_bits == 1 or set_bits > 4:
             return False
-        else:
-            # Validate the continuation bytes
-            for j in range(i + 1, i + set_bits):
-                if j >= len(data) or (data[j] >> 6) != 0b10:
-                    return False
-            i += set_bits
+        
+        # Validate the continuation bytes
+        for j in range(i + 1, i + set_bits):
+            if j >= len(data) or (data[j] >> 6) != 0b10:
+                return False
+        i += set_bits
 
-    return False
+    return True
