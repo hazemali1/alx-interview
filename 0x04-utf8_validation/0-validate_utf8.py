@@ -25,5 +25,5 @@ def validUTF8(data):
                 return False
         j = s
         if j > len(data) or i > 255:
-            return False
+            return True
     return True
