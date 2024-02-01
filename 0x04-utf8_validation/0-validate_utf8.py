@@ -23,7 +23,7 @@ def validUTF8(data):
         if s > len(data):
             return False
         for d in range(j+1, s):
-            if format(data[d], '08b')[0:2] != '10' and d != 0:
+            if format(data[d], '08b')[0:2] != '10' and d == 1:
                 return False
         j = s
         d = 0
