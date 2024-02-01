@@ -23,8 +23,8 @@ def validUTF8(data):
         else:
             # Validate the continuation bytes
             for j in range(i + 1, i + set_bits):
-                if (data[j] >> 6) != 0b10:
+                if j >= len(data) or (data[j] >> 6) != 0b10:
                     return False
             i += set_bits
 
-    return True
+    return False
