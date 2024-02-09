@@ -28,11 +28,14 @@ for j in range(int((num - 2) / 2)):
             s = d
         elif q < num:
             s = q
-        elif q > num:
-            q = 0
-            s = 0
+        elif q >= num:
+            if q % 2 == 0:
+                q = 1
+            else:
+                q = 0
+            s = q
         li.append([i, s])
-        q += 2
+        q += 1 + d
     lis.append(li)
     d += 1
 
