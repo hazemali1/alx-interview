@@ -17,22 +17,32 @@ if int(sys.argv[1]) < 4:
 
 num = int(sys.argv[1])
 lis = []
+t = []
 d = 1
 
-for j in range(num - 2):
+for j in range(int((num - 2) / 2)):
     li = []
+    q = d
     for i in range(num):
         if len(li) == 0:
             s = d
-        elif len(li) == num - 1:
+        elif q < num:
+            s = q
+        elif q > num:
+            q = 0
             s = 0
-        elif len(li) == d - 1:
-            s = 1
-        else:
-            s = i + 1
         li.append([i, s])
+        q += 2
     lis.append(li)
     d += 1
 
-for x in lis:
+t = lis[:]
+lis.reverse()
+for j in range(len(lis)):
+    g = []
+    for i in range(num):
+        g.append([i, lis[j][(i + 1) * -1][1]])
+    t.append(g)
+
+for x in t:
     print(x)
